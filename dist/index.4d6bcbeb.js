@@ -566,7 +566,7 @@ const root = document.querySelector("#root");
 root.append(new (0, _appDefault.default)().el);
 (0, _routesDefault.default)();
 
-},{"./App":"2kQhy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./routes":"3L9mC"}],"2kQhy":[function(require,module,exports) {
+},{"./App":"2kQhy","./routes":"3L9mC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2kQhy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _kato = require("./core/kato");
@@ -714,12 +714,39 @@ exports.default = (0, _kato.createRouter)([
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _kato = require("../core/kato");
+var _headline = require("../components/Headline");
+var _headlineDefault = parcelHelpers.interopDefault(_headline);
 class Home extends (0, _kato.Component) {
     render() {
-        this.el.innerHTML = "<h1>Hello wolrd</h1>";
+        const headline = new (0, _headlineDefault.default)().el;
+        this.el.classList.add("container");
+        this.el.append(headline);
     }
 }
 exports.default = Home;
+
+},{"../core/kato":"eFacd","../components/Headline":"gaVgo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gaVgo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _kato = require("../core/kato");
+class Headline extends (0, _kato.Component) {
+    render() {
+        this.el.classList.add("headline");
+        this.el.innerHTML = /*html*/ `
+    <h1>
+      <span>OMD6 API</span><br>
+      THE OPEN<br>
+      MOVIE DATABASE
+      </h1>
+      <p>
+      The OMDb API is a RESTful web service to obtain movie information, 
+      all content and images on the site are contributed and maintained by our users.<br>
+      If you find this service useful, please consider making a one-time donation or become a patron.
+      </p>
+      `;
+    }
+}
+exports.default = Headline;
 
 },{"../core/kato":"eFacd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["e11Rl","gLLPy"], "gLLPy", "parcelRequire6588")
 
