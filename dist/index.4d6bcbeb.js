@@ -731,7 +731,7 @@ class Home extends (0, _kato.Component) {
 }
 exports.default = Home;
 
-},{"../core/kato":"eFacd","../components/Headline":"gaVgo","../components/Search":"jqPPz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../components/MovieList":"8UDl3"}],"gaVgo":[function(require,module,exports) {
+},{"../core/kato":"eFacd","../components/Headline":"gaVgo","../components/Search":"jqPPz","../components/MovieList":"8UDl3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gaVgo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _kato = require("../core/kato");
@@ -784,7 +784,7 @@ class Search extends (0, _kato.Component) {
 }
 exports.default = Search;
 
-},{"../core/kato":"eFacd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../store/movie":"kq1bo"}],"kq1bo":[function(require,module,exports) {
+},{"../core/kato":"eFacd","../store/movie":"kq1bo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kq1bo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "searchmovies", ()=>searchmovies);
@@ -814,6 +814,8 @@ parcelHelpers.defineInteropFlag(exports);
 var _kato = require("../core/kato");
 var _movie = require("../store/movie");
 var _movieDefault = parcelHelpers.interopDefault(_movie);
+var _movieItem = require("./MovieItem");
+var _movieItemDefault = parcelHelpers.interopDefault(_movieItem);
 class MovieList extends (0, _kato.Component) {
     constructor(){
         super();
@@ -827,13 +829,43 @@ class MovieList extends (0, _kato.Component) {
       <div class="movies"></div>
     `;
         const moviesEl = this.el.querySelector(".movies");
-        moviesEl.append((0, _movieDefault.default).state.movies.map((movie)=>{
-            return movie.Title;
-        }));
+        moviesEl.append(...(0, _movieDefault.default).state.movies.map((movie)=>new (0, _movieItemDefault.default)({
+                movie
+            }).el));
     }
 }
 exports.default = MovieList;
 
-},{"../core/kato":"eFacd","../store/movie":"kq1bo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["e11Rl","gLLPy"], "gLLPy", "parcelRequire6588")
+},{"../core/kato":"eFacd","../store/movie":"kq1bo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./MovieItem":"fAzE8"}],"fAzE8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _kato = require("../core/kato");
+class MovieItem extends (0, _kato.Component) {
+    constructor(props){
+        super({
+            props,
+            tagName: "a"
+        });
+    }
+    render() {
+        const { movie  } = this.props;
+        this.el.setAttribute("href", `#/movie?id=${movie.imdbID}`);
+        this.el.classList.add("movie");
+        this.el.style.backgroundImage = `url(${movie.Poster})`;
+        this.el.innerHTML = /* html */ `
+      <div class="info">
+        <div class="year">
+          ${movie.Year}
+        </div>
+        <div class="title">
+          ${movie.Title}
+        </div>
+      </div>
+    `;
+    }
+}
+exports.default = MovieItem;
+
+},{"../core/kato":"eFacd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["e11Rl","gLLPy"], "gLLPy", "parcelRequire6588")
 
 //# sourceMappingURL=index.4d6bcbeb.js.map
