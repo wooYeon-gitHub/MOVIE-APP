@@ -29,6 +29,7 @@ body {
   color: var(--color-white);
   background-color: var(--color-area);
   cursor: pointer;
+  border: none;
   border-radius: 4px;
   outline: none;
   padding: 0 20px;
@@ -148,6 +149,17 @@ body {
 
 .movies .movie .info .title {
   color: var(--color-white);
+}
+
+.view-more {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+
+.view-more.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=index.af20ad6e.css.map */

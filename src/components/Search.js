@@ -1,5 +1,5 @@
 import { Component } from '../core/kato'
-import movieStore, { searchmovies } from '../store/movie'
+import movieStore, { searchMovies } from '../store/movie'
 
 export default class Search extends Component {
   render () {
@@ -17,14 +17,14 @@ export default class Search extends Component {
     })
     inputEl.addEventListener('keydown', event => {
       if (event.key === 'Enter' && movieStore.state.searchText.trim()) {
-        searchmovies(1)
+        searchMovies(1)
       }
     })
 
     const btnEl = this.el.querySelector('.btn')
     btnEl.addEventListener('click', () => {
       if (movieStore.state.searchText.trim()) {
-        searchmovies(1)
+        searchMovies(1)
       }
     })
   }
