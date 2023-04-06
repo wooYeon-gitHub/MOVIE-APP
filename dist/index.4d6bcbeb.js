@@ -572,16 +572,19 @@ parcelHelpers.defineInteropFlag(exports);
 var _kato = require("./core/kato");
 var _theHeader = require("./components/TheHeader");
 var _theHeaderDefault = parcelHelpers.interopDefault(_theHeader);
+var _theFooter = require("./components/TheFooter");
+var _theFooterDefault = parcelHelpers.interopDefault(_theFooter);
 class App extends (0, _kato.Component) {
     render() {
         const theHeader = new (0, _theHeaderDefault.default)().el;
+        const theFooter = new (0, _theFooterDefault.default)().el;
         const routerView = document.createElement("router-view");
-        this.el.append(theHeader, routerView);
+        this.el.append(theHeader, routerView, theFooter);
     }
 }
 exports.default = App;
 
-},{"./core/kato":"eFacd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./components/TheHeader":"3Cyq4"}],"eFacd":[function(require,module,exports) {
+},{"./core/kato":"eFacd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./components/TheHeader":"3Cyq4","./components/TheFooter":"b3x3c"}],"eFacd":[function(require,module,exports) {
 ///// Component /////
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -761,6 +764,34 @@ class TheHeader extends (0, _kato.Component) {
     }
 }
 exports.default = TheHeader;
+
+},{"../core/kato":"eFacd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b3x3c":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _kato = require("../core/kato");
+class TheFooter extends (0, _kato.Component) {
+    constructor(){
+        super({
+            tagName: "footer"
+        });
+    }
+    render() {
+        this.el.innerHTML = /* html */ `
+      <div>
+        <a href="https://github.com/wooYeon-gitHub/Movie-app">
+          GitHub Repository
+        </a>
+      </div>
+      <div>
+        <a href="https://github.com/wooYeon-gitHub">
+          ${new Date().getFullYear()}
+          KATO
+        </a>
+      </div>
+    `;
+    }
+}
+exports.default = TheFooter;
 
 },{"../core/kato":"eFacd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3L9mC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
