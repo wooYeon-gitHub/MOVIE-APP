@@ -1,20 +1,22 @@
-import { Component }  from '../core/kato'
+import { Component } from '../core/kato'
+import aboutStore from '../store/about'
 
 export default class TheFooter extends Component {
   constructor() {
     super({
-      tagName: 'footer',
+      tagName: 'footer'
     })
   }
   render() {
+    const { github, repository } = aboutStore.state
     this.el.innerHTML = /* html */ `
       <div>
-        <a href="https://github.com/wooYeon-gitHub/Movie-app">
-          GitHub Repository
+        <a href="${repository}">
+          GitHub Repository.
         </a>
       </div>
       <div>
-        <a href="https://github.com/wooYeon-gitHub">
+        <a href="${github}">
           ${new Date().getFullYear()}
           KATO
         </a>
