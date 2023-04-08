@@ -819,6 +819,8 @@ var _movie = require("./Movie");
 var _movieDefault = parcelHelpers.interopDefault(_movie);
 var _about = require("./About");
 var _aboutDefault = parcelHelpers.interopDefault(_about);
+var _notFound = require("./NotFound");
+var _notFoundDefault = parcelHelpers.interopDefault(_notFound);
 exports.default = (0, _kato.createRouter)([
     {
         path: "#/",
@@ -831,10 +833,14 @@ exports.default = (0, _kato.createRouter)([
     {
         path: "#/about",
         component: (0, _aboutDefault.default)
-    }
+    },
+    {
+        path: ".{0,}",
+        component: (0, _notFoundDefault.default)
+    } // * 정규식 표현으로 모든 정보를 찾고 아닐 경우를 반환.
 ]);
 
-},{"../core/kato":"eFacd","./Home":"0JSNG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./Movie":"1LTyN","./About":"gdB30"}],"0JSNG":[function(require,module,exports) {
+},{"../core/kato":"eFacd","./Home":"0JSNG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./Movie":"1LTyN","./About":"gdB30","./NotFound":"4fDiL"}],"0JSNG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _kato = require("../core/kato");
@@ -1150,6 +1156,23 @@ class About extends (0, _kato.Component) {
 }
 exports.default = About;
 
-},{"../core/kato":"eFacd","../store/about":"4RAJO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["e11Rl","gLLPy"], "gLLPy", "parcelRequire6588")
+},{"../core/kato":"eFacd","../store/about":"4RAJO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4fDiL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _kato = require("../core/kato");
+class NotFound extends (0, _kato.Component) {
+    render() {
+        this.el.classList.add("container", "not-found");
+        this.el.innerHTML = /* html */ `
+      <h1>
+        Sorry..<br />
+        Page Not Found.
+      </h1>
+    `;
+    }
+}
+exports.default = NotFound;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../core/kato":"eFacd"}]},["e11Rl","gLLPy"], "gLLPy", "parcelRequire6588")
 
 //# sourceMappingURL=index.4d6bcbeb.js.map
