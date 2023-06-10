@@ -83,11 +83,5 @@ export class Store {
       ? this.observers[key].push(cb) // 있으면 새로운 콜백 밀어넣기!
       : this.observers[key] = [cb] // 없으면 콜백 배열로 할당!
 
-    // 예시)
-    // observers = {
-    //   구독할상태이름: [실행할콜백1, 실행할콜백2]
-    //   movies: [cb, cb, cb],
-    //   message: [cb]
-    // }
   }
 }

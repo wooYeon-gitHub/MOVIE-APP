@@ -5,6 +5,6 @@ export default new Store({
   name: 'KATO / LEEWOOYEON',
   email: 'dndus9510@gmail.com',
   blog: '',
-  github: 'https://github.com/wooYeon-gitHub',
-  repository: 'https://github.com/wooYeon-gitHub/Movie-app'
+  github: 'https://github.com/wooyeooon',
+  repository: 'https://github.com/wooyeooon/Movie-app'
 })
