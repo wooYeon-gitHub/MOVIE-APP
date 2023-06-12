@@ -664,12 +664,6 @@ class Store {
             cb
         ] // 없으면 콜백 배열로 할당!
         ;
-    // 예시)
-    // observers = {
-    //   구독할상태이름: [실행할콜백1, 실행할콜백2]
-    //   movies: [cb, cb, cb],
-    //   message: [cb]
-    // }
     }
 }
 
@@ -735,7 +729,7 @@ class TheHeader extends (0, _kato.Component) {
     render() {
         this.el.innerHTML = /* html */ `
       <a
-        href = "#/" 
+        href = "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg"
         class = "logo">
         <span>OMDbAPI</span>.COM
       </a>
@@ -805,8 +799,8 @@ exports.default = new (0, _kato.Store)({
     name: "KATO / LEEWOOYEON",
     email: "dndus9510@gmail.com",
     blog: "",
-    github: "https://github.com/wooYeon-gitHub",
-    repository: "https://github.com/wooYeon-gitHub/Movie-app"
+    github: "https://github.com/wooyeooon",
+    repository: "https://github.com/wooyeooon/Movie-app"
 });
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../core/kato":"eFacd"}],"3L9mC":[function(require,module,exports) {
@@ -873,14 +867,12 @@ class Headline extends (0, _kato.Component) {
         this.el.classList.add("headline");
         this.el.innerHTML = /*html*/ `
     <h1>
-      <span>OMD6 API</span><br>
-      THE OPEN<br>
-      MOVIE DATABASE
+      <span>KATO</span><br>
+      MOVIE WORLD
       </h1>
       <p>
       The OMDb API is a RESTful web service to obtain movie information, 
-      all content and images on the site are contributed and maintained by our users.<br>
-      If you find this service useful, please consider making a one-time donation or become a patron.
+      all content and images on the site are contributed and maintained by our users.
       </p>
       `;
     }
