@@ -731,7 +731,7 @@ class TheHeader extends (0, _kato.Component) {
       <a
         href = "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg"
         class = "logo">
-        <span>OMDbAPI</span>.COM
+        <span>KATO MOVIE</span>.COM
       </a>
       <nav>
         <ul>
